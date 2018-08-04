@@ -1,0 +1,8 @@
+{
+  "name": "keybinds",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "description": "Create keybindings for your client side app.",
+  "author": "Evan M Jones <me@evanjon.es> (https://evanjon.es/)",
+  "license": "MIT"
+}
