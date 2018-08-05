@@ -1,5 +1,9 @@
 # Keybinds
 
+#### What
+
+Multi-key keybindings. Creates only two event listeners ever (keyup, keydown). Easily add Emacs-like (or other) keybindings to your JavaScript applications.
+
 #### Why
 
 I've made bad versions of this ~20 times. Time to put it on NPM.
