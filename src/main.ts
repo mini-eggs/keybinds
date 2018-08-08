@@ -26,6 +26,7 @@ class KeyBinds {
   private setupListener() {
     document.addEventListener("keydown", this.handleKeyDown);
     document.addEventListener("keyup", this.handleKeyUp);
+    window.addEventListener("blur", this.handleWindowBlur);
   }
 
   private destroy() {
@@ -33,6 +34,10 @@ class KeyBinds {
     document.removeEventListener("keydown", this.handleKeyDown);
     document.removeEventListener("keyup", this.handleKeyUp);
   }
+
+  private handleWindowBlur = () => {
+    this.down = {};
+  };
 
   private handleKeyDown = (event: KeyboardEvent) => {
     const key = event.which || event.keyCode;
