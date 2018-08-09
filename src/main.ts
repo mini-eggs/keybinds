@@ -33,6 +33,7 @@ class KeyBinds {
     delete KeyBinds.instance;
     document.removeEventListener("keydown", this.handleKeyDown);
     document.removeEventListener("keyup", this.handleKeyUp);
+    window.removeEventListener("blur", this.handleWindowBlur);
   }
 
   private handleWindowBlur = () => {
