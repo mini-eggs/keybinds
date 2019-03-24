@@ -15,32 +15,19 @@ I've made bad versions of this ~20 times. Time to put it on NPM.
 and
 
 ```javascript
-import KeyBinds from "keybinds";
+import { listen, unlisten } from "keybinds";
 
-KeyBinds([], 65, () => {
+let unlistenA = listen([], 65, () => {
   console.log("a");
 });
 
-KeyBinds([20], 65, () => {
+listen([17], 65, () => {
   console.log("ctrl+a");
+  unlistenA();
 });
 
-KeyBinds([20, 18], 65, () => {
+listen([17, 18], 65, () => {
   console.log("ctrl+alt+a");
-});
-
-let destroy;
-
-destroy = KeyBinds([], 83, () => {
-  console.log("s - destroy");
-  destroy && destroy();
-  destroy = undefined;
-
-  setTimeout(() => {
-    console.log("trying again!");
-    KeyBinds([], 65, () => {
-      console.log("a - and we're back!");
-    });
-  }, 1000);
+  unlisten();
 });
 ```

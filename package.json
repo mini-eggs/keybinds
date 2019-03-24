@@ -1,6 +1,6 @@
 {
   "name": "keybinds",
-  "version": "1.2.1",
+  "version": "2.0.0",
   "main": "dist/main.js",
   "description": "Create keybindings for your client side app.",
   "author": "Evan M Jones <me@evanjon.es> (https://evanjon.es/)",
@@ -10,9 +10,10 @@
     "url": "https://github.com/mini-eggs/keybinds"
   },
   "scripts": {
-    "start": "node_modules/google-closure-compiler-linux/compiler --generate_exports --export_local_property_definitions --use_types_for_optimization --formatting SINGLE_QUOTES --language_in=ECMASCRIPT6 --language_out=ECMASCRIPT5 --compilation_level ADVANCED --js_output_file=dist/main.js --js 'src/*.js'"
+    "start": "tsc && terser --compress --mangle --output dist/main.js -- dist/main.js "
   },
   "dependencies": {
-    "google-closure-compiler-linux": "^20181210.0.0"
+    "terser": "^3.17.0",
+    "typescript": "^3.3.4000"
   }
 }
